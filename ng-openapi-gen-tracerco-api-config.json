@@ -1,0 +1,13 @@
+{
+    "$schema": "https://raw.githubusercontent.com/cyclosproject/ng-openapi-gen/master/ng-openapi-gen-schema.json",
+    "input": "ng-openapi-gen-tracerco-api.json",
+    "output": "src/app/services/tracerco-api",
+    "configuration": "TracercoApiConfiguration",
+    "servicePrefix": "TracercoApi",
+    "modelPrefix": "TracercoApi",
+    "baseService":"TracercoApiBaseService",
+    "requestBuilder":"TracercoApiRequestBuilder",
+    "response":"TracercoApiStrictHttpResponse",
+    "module":"TracercoApiModule",
+    "indexFile": true
+  }
