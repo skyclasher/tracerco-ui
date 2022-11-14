@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TracercoApiWeatherForecastService } from '../services/tracerco-api';
+import { TracercoApiWeatherForecast, TracercoApiWeatherForecastService } from '../services/tracerco-api';
 
 @Component({
   selector: 'app-weather',
@@ -10,9 +10,14 @@ export class WeatherComponent implements OnInit {
 
   constructor(private weatherForecastService: TracercoApiWeatherForecastService) { }
 
+  weatherList: TracercoApiWeatherForecast[] = [];
+
   ngOnInit(): void {
     // TODO: Get weather forecast here
-    // this.weatherForecastService.weatherForecastGetWeatherForecastGet$Plain().subscribe(result => console.log(result));
+    this.weatherForecastService.weatherForecastGetWeatherForecastGet$Plain().subscribe(result => {
+      this.weatherList = result;
+      console.log(result);
+    });
   }
 
 }

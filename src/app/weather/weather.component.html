@@ -1,1 +1,27 @@
 <p>weather works!</p>
+
+
+<p>{{weatherList}}</p>
+
+
+<table>
+  <tr>
+  <td>
+    date
+  </td>
+  <td>
+    temperatureC
+  </td>
+  <td>
+    temperatureF
+  </td>
+  <td>
+    summary
+  </td>
+  <tr *ngFor="let weather of weatherList">
+    <td>{{ weather.date }}</td>
+    <td>{{ weather.temperatureC }}</td>
+    <td>{{ weather.temperatureF }}</td>
+    <td>{{ weather.summary }}</td>
+  </tr>
+</table>

@@ -113,4 +113,95 @@ export class TracercoApiWeatherForecastService extends TracercoApiBaseService {
     );
   }
 
+  /**
+   * Path part for operation weatherForecastGetHottestForecastGet
+   */
+  static readonly WeatherForecastGetHottestForecastGetPath = '/WeatherForecast/GetHottestForecast';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `weatherForecastGetHottestForecastGet$Plain()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  weatherForecastGetHottestForecastGet$Plain$Response(params?: {
+    context?: HttpContext
+  }
+): Observable<TracercoApiStrictHttpResponse<TracercoApiWeatherForecast>> {
+
+    const rb = new TracercoApiRequestBuilder(this.rootUrl, TracercoApiWeatherForecastService.WeatherForecastGetHottestForecastGetPath, 'get');
+    if (params) {
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'text',
+      accept: 'text/plain',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return r as TracercoApiStrictHttpResponse<TracercoApiWeatherForecast>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `weatherForecastGetHottestForecastGet$Plain$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  weatherForecastGetHottestForecastGet$Plain(params?: {
+    context?: HttpContext
+  }
+): Observable<TracercoApiWeatherForecast> {
+
+    return this.weatherForecastGetHottestForecastGet$Plain$Response(params).pipe(
+      map((r: TracercoApiStrictHttpResponse<TracercoApiWeatherForecast>) => r.body as TracercoApiWeatherForecast)
+    );
+  }
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `weatherForecastGetHottestForecastGet$Json()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  weatherForecastGetHottestForecastGet$Json$Response(params?: {
+    context?: HttpContext
+  }
+): Observable<TracercoApiStrictHttpResponse<TracercoApiWeatherForecast>> {
+
+    const rb = new TracercoApiRequestBuilder(this.rootUrl, TracercoApiWeatherForecastService.WeatherForecastGetHottestForecastGetPath, 'get');
+    if (params) {
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'json',
+      accept: 'text/json',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return r as TracercoApiStrictHttpResponse<TracercoApiWeatherForecast>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `weatherForecastGetHottestForecastGet$Json$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  weatherForecastGetHottestForecastGet$Json(params?: {
+    context?: HttpContext
+  }
+): Observable<TracercoApiWeatherForecast> {
+
+    return this.weatherForecastGetHottestForecastGet$Json$Response(params).pipe(
+      map((r: TracercoApiStrictHttpResponse<TracercoApiWeatherForecast>) => r.body as TracercoApiWeatherForecast)
+    );
+  }
+
 }
