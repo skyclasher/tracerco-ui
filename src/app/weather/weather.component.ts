@@ -12,6 +12,7 @@ export class WeatherComponent implements OnInit {
 
   ngOnInit(): void {
     // TODO: Get weather forecast here
+    // this.weatherForecastService.weatherForecastGetWeatherForecastGet$Plain().subscribe(result => console.log(result));
   }
 
 }
